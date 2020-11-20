@@ -1,0 +1,50 @@
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: $calendarVMargin auto;
+  width: $calendarWidth;
+}
+
+@for $i from 1 through 31 {
+  .calendar :nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+.calendar-30 :last-child {
+  display: none;
+}
+
+.calendar-29 :nth-child(n+30) {
+  display: none;
+}
+
+.calendar-28 :nth-child(n+29) {
+  display: none;
+}
+
+.calendar-tue :first-child {
+  margin-left: firstDayMargin(1);
+}
+
+.calendar-wed :first-child {
+  margin-left: firstDayMargin(2);
+}
+
+.calendar-thu :first-child {
+  margin-left: firstDayMargin(3);
+}
+
+.calendar-fri :first-child {
+  margin-left: firstDayMargin(4);
+}
+
+.calendar-sat :first-child {
+  margin-left: firstDayMargin(5);
+}
+
+.calendar-sun :first-child {
+  margin-left: firstDayMargin(6);
+}

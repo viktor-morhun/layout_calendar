@@ -1,0 +1,47 @@
+
+.calendar > div {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  background-color: $cellColor;
+  border: $borderWidth solid $borderColor;
+  width: $cellWidth;
+  height: $cellHeight;
+  margin: 0 1px 1px 0;
+
+  @keyframes hover {
+    from {
+      background-color: $cellColor;
+      bottom: 0;
+    }
+    to {
+      background-color: $animatedCellColor;
+      bottom: $animationHeight;
+    }
+  }
+  @keyframes hover-back {
+    from {
+      background-color: $animatedCellColor;
+      bottom: $animationHeight;
+    }
+    to {
+      background-color: $cellColor;
+      bottom: 0;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    position: relative;
+    animation-name: hover;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
+  }
+
+  &:not(:hover) {
+    position: relative;
+    animation-name: hover-back;
+    animation-duration: $animationDuration;
+  }
+}
