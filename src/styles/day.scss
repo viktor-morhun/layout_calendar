@@ -9,39 +9,12 @@
   width: $cellWidth;
   height: $cellHeight;
   margin: 0 1px 1px 0;
-
-  @keyframes hover {
-    from {
-      background-color: $cellColor;
-      bottom: 0;
-    }
-    to {
-      background-color: $animatedCellColor;
-      bottom: $animationHeight;
-    }
-  }
-  @keyframes hover-back {
-    from {
-      background-color: $animatedCellColor;
-      bottom: $animationHeight;
-    }
-    to {
-      background-color: $cellColor;
-      bottom: 0;
-    }
-  }
+  transition: 0.5s;
 
   &:hover {
     cursor: pointer;
-    position: relative;
-    animation-name: hover;
-    animation-duration: $animationDuration;
-    animation-fill-mode: forwards;
+    transform: translate(0, -$animationHeight);
+    background-color: $animatedCellColor;
   }
 
-  &:not(:hover) {
-    position: relative;
-    animation-name: hover-back;
-    animation-duration: $animationDuration;
-  }
 }
