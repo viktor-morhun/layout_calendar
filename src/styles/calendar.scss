@@ -13,38 +13,14 @@
   }
 }
 
-.calendar-30 :last-child {
-  display: none;
+@for $day from 28 through 30 {
+  .calendar-#{$day} :nth-child(n + #{$day + 1}) {
+    display: none;
+  }
 }
 
-.calendar-29 :nth-child(n+30) {
-  display: none;
-}
-
-.calendar-28 :nth-child(n+29) {
-  display: none;
-}
-
-.calendar-tue :first-child {
-  margin-left: firstDayMargin(1);
-}
-
-.calendar-wed :first-child {
-  margin-left: firstDayMargin(2);
-}
-
-.calendar-thu :first-child {
-  margin-left: firstDayMargin(3);
-}
-
-.calendar-fri :first-child {
-  margin-left: firstDayMargin(4);
-}
-
-.calendar-sat :first-child {
-  margin-left: firstDayMargin(5);
-}
-
-.calendar-sun :first-child {
-  margin-left: firstDayMargin(6);
+@each $dayOfWeek, $number in $dayOfWeek-number {
+  .calendar-#{$dayOfWeek} :first-child {
+    margin-left: firstDayMargin($number);
+  }
 }

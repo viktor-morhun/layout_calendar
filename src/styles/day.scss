@@ -1,18 +1,17 @@
-
 .calendar > div {
   display: flex;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
   background-color: $cellColor;
-  border: $borderWidth solid $borderColor;
+  border: $border;
   width: $cellWidth;
   height: $cellHeight;
   transition: 0.5s;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
-    transform: translate(0, -$animationHeight);
+    transform: translateY(-$animationHeight);
     background-color: $animatedCellColor;
   }
 

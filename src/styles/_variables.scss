@@ -1,7 +1,6 @@
 $cellColor: #eee;
 $animatedCellColor: #ffc0cb;
-$borderColor: #000;
-$borderWidth: 1px;
+$border: 1px solid #000;
 $cellWidth: 100px;
 $cellHeight: 100px;
 $cellSpacing: 1px;
@@ -10,6 +9,14 @@ $animationDuration: 0.5s;
 $dayOfWeek: 1;
 $calendarVMargin: 200px;
 $calendarWidth: 7 * ($cellWidth +  $cellSpacing);
+$dayOfWeek-number: (
+  tue: 1,
+  wed: 2,
+  thu: 3,
+  fri: 4,
+  sat: 5,
+  sun: 6
+);
 
 @function firstDayMargin($dayOfWeek) {
   @return $dayOfWeek * ($cellWidth + $cellSpacing);
